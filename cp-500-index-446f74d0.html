@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>500彩票网 · 简明指南与访问提醒</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background-color: #f2f4f7;
+            color: #1e293b;
+            line-height: 1.6;
+            padding: 24px;
+        }
+
+        .page-wrap {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* 顶部导航 */
+        .top-nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #ffffff;
+            padding: 14px 30px;
+            border-radius: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            border: 1px solid #e6edf2;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .logo-text {
+            font-weight: 600;
+            font-size: 1.3rem;
+            letter-spacing: 1px;
+            color: #0c4a6e;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #334155;
+            font-size: 0.95rem;
+            padding: 6px 0;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #0a6ea0;
+            border-bottom-color: #0a6ea0;
+        }
+
+        /* hero 区域 */
+        .hero {
+            background: #ffffff;
+            border-radius: 28px;
+            padding: 48px 40px 40px 40px;
+            margin-bottom: 32px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            border: 1px solid #e2e9f0;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 500;
+            color: #0f2b3c;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+
+        .hero p {
+            max-width: 720px;
+            font-size: 1.1rem;
+            color: #3b4a5c;
+            margin-bottom: 14px;
+        }
+
+        .hero .lead {
+            font-size: 1.05rem;
+            background: #f0f5fa;
+            padding: 14px 20px;
+            border-radius: 16px;
+            border-left: 4px solid #7ba9c9;
+            color: #1e3b4f;
+        }
+
+        /* 卡片网格：三个场景 */
+        .scene-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .scene-card {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 28px 22px 24px 22px;
+            border: 1px solid #dee6ed;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.02);
+            transition: box-shadow 0.2s, transform 0.15s;
+        }
+
+        .scene-card:hover {
+            box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+            transform: translateY(-4px);
+        }
+
+        .scene-card h3 {
+            font-weight: 500;
+            font-size: 1.2rem;
+            color: #164863;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .scene-card h3::before {
+            content: "·";
+            font-size: 1.8rem;
+            color: #7ba9c9;
+            line-height: 1;
+        }
+
+        .scene-card p {
+            color: #36454f;
+            font-size: 0.97rem;
+            margin-bottom: 10px;
+        }
+
+        .scene-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .scene-card li {
+            font-size: 0.9rem;
+            color: #3d5567;
+            padding: 6px 0 6px 18px;
+            position: relative;
+        }
+
+        .scene-card li::before {
+            content: "›";
+            position: absolute;
+            left: 0;
+            color: #7ba9c9;
+            font-weight: bold;
+        }
+
+        /* 常见说明区域 */
+        .faq-summary {
+            background: #ffffff;
+            border-radius: 28px;
+            padding: 36px 40px 32px 40px;
+            margin-bottom: 32px;
+            border: 1px solid #dee6ed;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.02);
+        }
+
+        .faq-summary h2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #0f2b3c;
+            margin-bottom: 24px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e2eef6;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+        }
+
+        .faq-item .q {
+            font-weight: 550;
+            color: #1a4055;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: baseline;
+        }
+
+        .faq-item .q::before {
+            content: "Q";
+            background: #e1edf6;
+            color: #0a4b6b;
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 30px;
+            margin-right: 10px;
+        }
+
+        .faq-item .a {
+            color: #374e5f;
+            padding-left: 42px;
+            font-size: 0.96rem;
+        }
+
+        .faq-item .a a {
+            color: #0a6ea0;
+            text-decoration: none;
+            border-bottom: 1px dotted #9cb8cf;
+        }
+
+        .faq-item .a a:hover {
+            border-bottom-style: solid;
+            color: #064469;
+        }
+
+        /* 附加提醒模块 */
+        .reminder-box {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 28px 36px;
+            border: 1px solid #e0e9f0;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+            margin-bottom: 36px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px 40px;
+            align-items: flex-start;
+        }
+
+        .reminder-box .icon-tip {
+            flex: 0 0 50px;
+            font-size: 2.2rem;
+            color: #7ba9c9;
+        }
+
+        .reminder-box .reminder-text {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .reminder-box .reminder-text p {
+            color: #2f4658;
+            font-size: 0.98rem;
+            margin-bottom: 8px;
+        }
+
+        .reminder-box .reminder-text p strong {
+            color: #0c4a6e;
+        }
+
+        /* footer */
+        .site-footer {
+            text-align: center;
+            padding: 24px 0 8px;
+            border-top: 1px solid #dce5ed;
+            color: #59758a;
+            font-size: 0.85rem;
+        }
+
+        /* 响应式 */
+        @media (max-width: 820px) {
+            .scene-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 14px;
+            }
+
+            .top-nav {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 16px 20px;
+            }
+
+            .nav-links {
+                gap: 18px;
+                flex-wrap: wrap;
+            }
+
+            .hero {
+                padding: 32px 20px;
+            }
+
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+
+            .scene-grid {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+
+            .faq-summary {
+                padding: 28px 20px;
+            }
+
+            .reminder-box {
+                padding: 22px 20px;
+                flex-direction: column;
+            }
+
+            .reminder-box .icon-tip {
+                flex: 0 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrap">
+    <!-- 顶部导航 -->
+    <nav class="top-nav">
+        <span class="logo-text">500 指南</span>
+        <div class="nav-links">
+            <a href="#">首页</a>
+            <a href="#">场景</a>
+            <a href="#">提醒</a>
+            <a href="#">说明</a>
+        </div>
+    </nav>
+
+    <!-- hero 简明指南 -->
+    <section class="hero">
+        <h1>简明指南 · 信息与访问提醒</h1>
+        <p>无论你正在熟悉 <a href="https://cp-500.com" style="color:#0a6ea0; text-decoration: none; border-bottom: 1px dotted #8ab3d0;">500彩票网</a> 的内容结构，还是想了解使用时的注意事项，这里提供一份温和的参考。本页面不代替原站功能，仅作为辅助介绍。</p>
+        <div class="lead">
+            <strong>出发点：</strong> 保持清晰，减少困惑。作为外部介绍页，我们聚焦于常见的使用场景、界面逻辑和访问前的几点备忘。
+        </div>
+    </section>
+
+    <!-- 三个场景模块 -->
+    <div class="scene-grid">
+        <div class="scene-card">
+            <h3>浏览与信息查阅</h3>
+            <p>日常浏览时，可关注版块分类与更新节奏。大部分内容围绕数据展示、趋势梳理与资讯整合展开。</p>
+            <ul>
+                <li>首页模块一般突出最新动态</li>
+                <li>分类导航便于快速定位</li>
+                <li>筛选与排序功能辅助阅读</li>
+            </ul>
+        </div>
+        <div class="scene-card">
+            <h3>功能交互与操作</h3>
+            <p>在交互过程中，注意表单、按钮与反馈提示。合理使用页面内的筛选和收藏，能提升个人效率。</p>
+            <ul>
+                <li>提交前核对关键信息</li>
+                <li>部分操作需先登录或注册</li>
+                <li>操作反馈通常以弹窗或状态行提示</li>
+            </ul>
+        </div>
+        <div class="scene-card">
+            <h3>账户与设置</h3>
+            <p>管理个人资料和安全选项时，建议定期查看通知偏好与隐私设置。保持登录环境稳定可减少异常。</p>
+            <ul>
+                <li>强密码与两步验证</li>
+                <li>及时更新联系方式</li>
+                <li>退出公共设备前清理会话</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 常见说明（FAQ 摘要） -->
+    <section class="faq-summary">
+        <h2>常见说明摘要</h2>
+        <div class="faq-item">
+            <div class="q">站内信息更新频率如何？</div>
+            <div class="a">各类数据与资讯通常按日或按周刷新，具体以页面标注为准。建议不定期回到 <a href="https://cp-500.com">500彩票网</a> 查看最新内容。</div>
+        </div>
+        <div class="faq-item">
+            <div class="q">访问时出现加载缓慢或提示异常？</div>
+            <div class="a">可先检查本地网络，或尝试清除浏览器缓存。部分功能在较旧内核上可能显示不完整，升级浏览器版本会有所改善。</div>
+        </div>
+        <div class="faq-item">
+            <div class="q">是否需要注册才能使用全部功能？</div>
+            <div class="a">基础浏览无需注册，但保存偏好、参与互动或使用个性化服务时通常需要账号。注册流程遵循标准邮箱或手机验证。</div>
+        </div>
+        <div class="faq-item">
+            <div class="q">如何反馈问题或提出建议？</div>
+            <div class="a">多数页面底部或侧边栏设有联系入口，也可以通过站内帮助中心提交描述。反馈前建议先查看已有常见问题。</div>
+        </div>
+    </section>
+
+    <!-- 访问提醒（软性提示） -->
+    <div class="reminder-box">
+        <div class="icon-tip">☕</div>
+        <div class="reminder-text">
+            <p><strong>访问前的小提醒</strong></p>
+            <p>请通过可靠的网络环境访问。对任何要求提供敏感信息（如支付密码、短信验证码）的页面保持警惕。官方渠道不会通过非正式方式索取账户凭证。</p>
+            <p>如果你对页面功能存在疑问，可以参考站内的帮助文档，或向熟悉的朋友了解使用经验。理性判断、适度使用，能带来更顺畅的体验。</p>
+        </div>
+    </div>
+
+    <!-- footer 简单版权与重申 -->
+    <footer class="site-footer">
+        <p>本页面为独立介绍页，内容基于公开信息整理，仅供参考。具体功能与规则请以 <a href="https://cp-500.com" style="color:#0c6c9e; text-decoration: none;">500彩票网</a> 实际页面为准。</p>
+        <p style="margin-top: 6px;">保持轻松，信息常新。</p>
+    </footer>
+</div>
+</body>
+</html>
